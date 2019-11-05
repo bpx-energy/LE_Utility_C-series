@@ -1,0 +1,18 @@
+﻿CREATE PROCEDURE [AFEDive].[GET_DRILL_VARIANCE_COST_BY_API10]
+	@api10 varchar(10)
+	
+AS
+	SELECT   API10 , 
+			 ACTIVITY_PHASE , 
+		     DATE_YMD, 
+	         MAX_DEPTH,
+	         CUM_PHASE_COST,
+			 CUM_WELL_COST,
+             VARIANCE_AMOUNT , 
+		     VARIANCE_COST_ID,
+			 VARIANCE_TYPE,
+			 VARIANCE_COMMENT
+			 from 
+			 [AFEDive].[DRILL_VARIANCE_COST]
+		     where API10=@api10
+

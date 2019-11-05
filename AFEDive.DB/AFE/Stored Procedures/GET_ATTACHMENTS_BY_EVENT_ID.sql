@@ -1,0 +1,16 @@
+﻿Create PROCEDURE [AFEDive].[GET_ATTACHMENTS_BY_EVENT_ID]
+	@eventId int
+
+AS
+
+SELECT  [ATTACHMENT_ID]
+      ,[ATTACHMENT_PATH]
+      ,[EVENT_ID]
+      ,[ROW_CREATE_DATE]
+      ,[ROW_CREATE_ID]
+      ,[ROW_UPDATE_DATE]
+      ,[ROW_UPDATE_ID]
+      ,[IS_DELETED]
+  FROM [AFEDive].[ATTACHMENT]
+  where EVENT_ID=@eventId and IS_DELETED=0
+GO
